@@ -1,4 +1,4 @@
-# AudioAPi
+# [中文]AudioAPi
 
 这是一个API库，该API进行了依赖嵌套，不需要添加其他依赖。
 
@@ -35,4 +35,38 @@ public static event Action<TrackSelectedEventArgs> OnTrackSelected; //音频选�
 public static event Action<TrackLoadedEventArgs> OnTrackLoaded; //音频加载
 public static event Action<TrackFinishedEventArgs> OnFinishedTrack; //音频播放完成
 ```
+
+# [English]AudioAPi
+
+This is an API library. This API has nested dependencies and does not require adding any other dependencies.
+
+This API add <b>Voice Player Component</b> and <b>Music Dummy Spawner</b> to the SCP:SL server, as well as more events for developers to use.
+
+
+## Example:
+
+![Example Image](https://github.com/MengXinSheQu/AudioApi/blob/main/Image/Example.png)
+
+
+## Download:
+
+From [Releases](https://github.com/MengXinSheQu/AudioApi/releases/latest) download ```AudioAPi.dll```. This API does not limit the framework. You can use ```EXILED```or```LabApi```framework(Except NWAPI)
+
+## Infomation:
+
+Note: This is not a music player plugin. It prefers to handle audio/dummy additions.
+
+This API allows your plugin to play audio faster. But this was limited by SCPSL's VoiceMessage(48000sample Mono .ogg)。
+
+## Dev Tips:
+
+These events at ```VoicePlayerBase```.
+
+```
+public static event Action<TrackSelectingEventArgs> OnTrackSelecting; //Selecting Music.
+public static event Action<TrackSelectedEventArgs> OnTrackSelected; //Selected Music.
+public static event Action<TrackLoadedEventArgs> OnTrackLoaded; //Load Music.
+public static event Action<TrackFinishedEventArgs> OnFinishedTrack; //Finish play.
+```
+
 
