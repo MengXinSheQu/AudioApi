@@ -1,4 +1,4 @@
-# [中文]AudioAPi
+# [中文]AudioAPI
 
 这是一个API库，该API进行了依赖嵌套，不需要添加其他依赖。
 
@@ -36,7 +36,7 @@ public static event Action<TrackLoadedEventArgs> OnTrackLoaded; //音频加载
 public static event Action<TrackFinishedEventArgs> OnFinishedTrack; //音频播放完成
 ```
 
-# [English]AudioAPi
+# [English]AudioAPI
 
 This is an API library. This API has nested dependencies and does not require adding any other dependencies.
 
