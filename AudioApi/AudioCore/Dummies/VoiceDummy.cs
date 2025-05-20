@@ -59,7 +59,7 @@ namespace AudioApi.AudioCore.Dummies
         /// <param name="MusicName">文件名称(不能加.ogg后缀名)</param>
         /// <param name="Volume">音量大小</param>
         /// <param name="Loop">是否循环</param>
-        public static void PlaySound(int Id, string Paths, string MusicName, float Volume = 50f, bool Loop = false)
+        public static void Play(int Id, string Paths, string MusicName, float Volume = 50f, bool Loop = false)
         {
             if (!List.ContainsKey(Id))
                 Add(Id, "Bot");
