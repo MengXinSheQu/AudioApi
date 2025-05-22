@@ -1,6 +1,6 @@
 # [中文]AudioAPI
 
-这是一个API库，该API进行了依赖嵌套，不需要添加其他依赖。
+这是一个SCP:SL的API库。
 
 该API库向SCP:SL服务器添加了<b>玩家式播放音乐组件</b>与<b>音乐假人生成</b>，同时添加了更多事件以便开发者使用。
 
@@ -38,7 +38,7 @@ public static event Action<TrackFinishedEventArgs> OnFinishedTrack; //音频播�
 
 # [English]AudioAPI
 
-This is an API library. This API has nested dependencies and does not require adding any other dependencies.
+This is an API library for SCP:SL.
 
 This API add <b>Voice Player Component</b> and <b>Music Dummy Spawner</b> to the SCP:SL server, as well as more events for developers to use.
 
