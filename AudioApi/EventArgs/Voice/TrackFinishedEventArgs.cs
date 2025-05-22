@@ -1,4 +1,4 @@
-﻿namespace AudioApi.AudioCore.EventArgs.Voice
+﻿namespace AudioApi.EventArgs.Voice
 {
     /// <summary>
     /// 音频播放完毕
