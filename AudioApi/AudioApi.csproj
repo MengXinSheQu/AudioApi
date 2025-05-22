@@ -1,145 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{156FD101-DB61-4825-90F2-5449BFBC115C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AudioApi</RootNamespace>
-    <AssemblyName>AudioApi</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net48</TargetFramework>
     <PlatformTarget>x64</PlatformTarget>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <NeutralLanguage>zh-Hans</NeutralLanguage>
+    <SignAssembly>False</SignAssembly>
+    <VersionPrefix>0.0.4</VersionPrefix>
+    <Authors>萌新社区开发团队</Authors>
+    <Company>$(Authors)</Company>
+    <Copyright>Copyright © 萌新社区开发团队</Copyright>
+    <Title>$(AssemblyName)</Title>
+    <AssemblyVersion>0.0.4.0</AssemblyVersion>
+    <FileVersion>0.0.4.0</FileVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Audio;Scpsl;LabApi;Dummies</PackageTags>
+    <RepositoryUrl>https://github.com/MengXinSheQu/AudioApi</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MengXinSheQu/AudioApi</PackageProjectUrl>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Northwood.LabAPI" Version="1.0.2" />
+    <PackageReference Include="NVorbis" Version="0.10.5" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\lib\net48\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="LabApi">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\LabApi.dll</HintPath>
+      <HintPath>..\lib\net48\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.dll</HintPath>
+      <HintPath>..\lib\net48\Mirror.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\lib\net48\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\lib\net48\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>..\lib\net48\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AudioCore\Dummies\VoiceDummy.cs" />
-    <Compile Include="AudioCore\EventArgs\Voice\TrackFinishedEventArgs.cs" />
-    <Compile Include="AudioCore\EventArgs\Voice\TrackLoadedEventArgs.cs" />
-    <Compile Include="AudioCore\EventArgs\Voice\TrackSelectedEventArgs.cs" />
-    <Compile Include="AudioCore\EventArgs\Voice\TrackSelectingEventArgs.cs" />
-    <Compile Include="AudioCore\VoicePlayerBase.cs" />
-    <Compile Include="Compents\FakeConnection.cs" />
-    <Compile Include="Nvorbis\Codebook.cs" />
-    <Compile Include="Nvorbis\Contracts\HuffmanListNode.cs" />
-    <Compile Include="Nvorbis\Contracts\ICodebook.cs" />
-    <Compile Include="Nvorbis\Contracts\IContainerReader.cs" />
-    <Compile Include="Nvorbis\Contracts\IFactory.cs" />
-    <Compile Include="Nvorbis\Contracts\IFloor.cs" />
-    <Compile Include="Nvorbis\Contracts\IFloorData.cs" />
-    <Compile Include="Nvorbis\Contracts\IHuffman.cs" />
-    <Compile Include="Nvorbis\Contracts\IMapping.cs" />
-    <Compile Include="Nvorbis\Contracts\IMdct.cs" />
-    <Compile Include="Nvorbis\Contracts\IMode.cs" />
-    <Compile Include="Nvorbis\Contracts\IPacket.cs" />
-    <Compile Include="Nvorbis\Contracts\IPacketProvider.cs" />
-    <Compile Include="Nvorbis\Contracts\IResidue.cs" />
-    <Compile Include="Nvorbis\Contracts\IStreamDecoder.cs" />
-    <Compile Include="Nvorbis\Contracts\IStreamStats.cs" />
-    <Compile Include="Nvorbis\Contracts\ITagData.cs" />
-    <Compile Include="Nvorbis\Contracts\IVorbisReader.cs" />
-    <Compile Include="Nvorbis\Contracts\Ogg\ICrc.cs" />
-    <Compile Include="Nvorbis\Contracts\Ogg\IForwardOnlyPacketProvider.cs" />
-    <Compile Include="Nvorbis\Contracts\Ogg\IPacketReader.cs" />
-    <Compile Include="Nvorbis\Contracts\Ogg\IPageData.cs" />
-    <Compile Include="Nvorbis\Contracts\Ogg\IPageReader.cs" />
-    <Compile Include="Nvorbis\Contracts\Ogg\IStreamPageReader.cs" />
-    <Compile Include="Nvorbis\Contracts\Ogg\PageFlags.cs" />
-    <Compile Include="Nvorbis\Contracts\ParameterChangeEventArgs.cs" />
-    <Compile Include="Nvorbis\DataPacket.cs" />
-    <Compile Include="Nvorbis\Extensions.cs" />
-    <Compile Include="Nvorbis\Factory.cs" />
-    <Compile Include="Nvorbis\Floor0.cs" />
-    <Compile Include="Nvorbis\Floor1.cs" />
-    <Compile Include="Nvorbis\Huffman.cs" />
-    <Compile Include="Nvorbis\Mapping.cs" />
-    <Compile Include="Nvorbis\Mdct.cs" />
-    <Compile Include="Nvorbis\Mode.cs" />
-    <Compile Include="Nvorbis\NewStreamEventArgs.cs" />
-    <Compile Include="Nvorbis\Ogg\ContainerReader.cs" />
-    <Compile Include="Nvorbis\Ogg\Crc.cs" />
-    <Compile Include="Nvorbis\Ogg\ForwardOnlyPacketProvider.cs" />
-    <Compile Include="Nvorbis\Ogg\ForwardOnlyPageReader.cs" />
-    <Compile Include="Nvorbis\Ogg\Packet.cs" />
-    <Compile Include="Nvorbis\Ogg\PacketProvider.cs" />
-    <Compile Include="Nvorbis\Ogg\PageReader.cs" />
-    <Compile Include="Nvorbis\Ogg\PageReaderBase.cs" />
-    <Compile Include="Nvorbis\Ogg\StreamPageReader.cs" />
-    <Compile Include="Nvorbis\Residue0.cs" />
-    <Compile Include="Nvorbis\Residue1.cs" />
-    <Compile Include="Nvorbis\Residue2.cs" />
-    <Compile Include="Nvorbis\StreamDecoder.cs" />
-    <Compile Include="Nvorbis\StreamStats.cs" />
-    <Compile Include="Nvorbis\TagData.cs" />
-    <Compile Include="Nvorbis\Utils.cs" />
-    <Compile Include="Nvorbis\VorbisReader.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
