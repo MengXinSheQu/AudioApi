@@ -21,7 +21,7 @@
 
 ## 处理:
 
-你可以复制你想要的[音乐](https://www.bilibili.com/video/BV1ZLrhYtE69k)，到[哔哩哔哩视频下载](https://snapany.com/zh/bilibili)下载视频，通过AdobeAU或其他软件转换为48000采样率的单轨道ogg格式音频。
+你可以复制你想要的[音乐](https://www.bilibili.com/video/BV1ZLrhYtE69)，到[哔哩哔哩视频下载](https://snapany.com/zh/bilibili)下载视频，通过AdobeAU或其他软件转换为48000采样率的单轨道ogg格式音频。
 
 ## 开发小贴士:
 
