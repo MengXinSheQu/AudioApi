@@ -12,13 +12,14 @@ using VoiceChat.Networking;
 using Random = UnityEngine.Random;
 using Log = LabApi.Features.Console.Logger;
 using System;
-using AudioApi.AudioCore.EventArgs.Voice;
+using AudioApi.EventArgs.Voice;
 
-namespace AudioApi.AudioCore
+namespace AudioApi
 {
+#pragma warning disable CS8618 // Unity3D MonoBehaviour
     public class VoicePlayerBase : MonoBehaviour
     {
-        public static Dictionary<ReferenceHub, VoicePlayerBase> AudioPlayers = new Dictionary<ReferenceHub, VoicePlayerBase>();
+        public static Dictionary<ReferenceHub, VoicePlayerBase> AudioPlayers = [];
         public const int HeadSamples = 1920;
         public OpusEncoder Encoder { get; } = new OpusEncoder(VoiceChat.Codec.Enums.OpusApplicationType.Voip);
         public PlaybackBuffer PlaybackBuffer { get; } = new PlaybackBuffer();
@@ -29,6 +30,7 @@ namespace AudioApi.AudioCore
         public float allowedSamples;
         public int samplesPerSecond;
         public Queue<float> StreamBuffer { get; } = new Queue<float>();
+
         public VorbisReader VorbisReader { get; set; }
         public float[] SendBuffer { get; set; }
         public float[] ReadBuffer { get; set; }
@@ -43,7 +45,7 @@ namespace AudioApi.AudioCore
         /// <summary>
         /// 所有播放的音乐
         /// </summary>
-        public List<string> AudioToPlay = new List<string>();
+        public List<string> AudioToPlay = [];
         /// <summary>
         /// 正在播放的音乐路径
         /// </summary>
@@ -89,7 +91,7 @@ namespace AudioApi.AudioCore
         /// <summary>
         /// 所有接受播放的玩家Id
         /// </summary>
-        public List<int> BroadcastTo = new List<int>();
+        public List<int> BroadcastTo = [];
         /// <summary>
         /// 音频播放类型
         /// </summary>
@@ -197,7 +199,7 @@ namespace AudioApi.AudioCore
             if (index != -1)
             {
                 if (Shuffle)
-                    AudioToPlay = AudioToPlay.OrderBy(i => Random.value).ToList();
+                    AudioToPlay = [.. AudioToPlay.OrderBy(i => Random.value)];
                 CurrentPlay = AudioToPlay[index];
                 AudioToPlay.RemoveAt(index);
                 if (Loop)
@@ -337,7 +339,7 @@ namespace AudioApi.AudioCore
 
                 foreach (var plr in ReferenceHub.AllHubs)
                 {
-                    if (plr.connectionToClient == null || !PlayerIsConnected(plr) || (BroadcastTo.Count >= 1 && !BroadcastTo.Contains(plr.PlayerId))) continue;
+                    if (plr.connectionToClient == null || !PlayerIsConnected(plr) || BroadcastTo.Count >= 1 && !BroadcastTo.Contains(plr.PlayerId)) continue;
 
                     plr.connectionToClient.Send(new VoiceMessage(Owner, BroadcastChannel, EncodedBuffer, dataLen, false));
                 }
@@ -356,5 +358,6 @@ namespace AudioApi.AudioCore
                    !string.IsNullOrEmpty(hub.authManager.UserId) &&
                    !hub.authManager.UserId.Contains("Dummy");
         }
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑添加 "required" 修饰符或声明为可为 null。
     }
 }
