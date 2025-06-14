@@ -10,9 +10,9 @@
     <SignAssembly>False</SignAssembly>
     <VersionPrefix>0.0.4</VersionPrefix>
     <Authors>萌新社区开发团队</Authors>
-    <Company>$(Authors)</Company>
+    <Company>萌新社区开发团队</Company>
     <Copyright>Copyright © 萌新社区开发团队</Copyright>
-    <Title>$(AssemblyName)</Title>
+    <Title>AudioApi</Title>
     <AssemblyVersion>0.0.4.0</AssemblyVersion>
     <FileVersion>0.0.4.0</FileVersion>
     <ImplicitUsings>disable</ImplicitUsings>
@@ -20,12 +20,20 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>Audio;Scpsl;LabApi;Dummies</PackageTags>
+    <PackageTags>Audio;Scpsl;LabApi;Dummies;Voice</PackageTags>
     <RepositoryUrl>https://github.com/MengXinSheQu/AudioApi</RepositoryUrl>
     <PackageProjectUrl>https://github.com/MengXinSheQu/AudioApi</PackageProjectUrl>
+    <Version>0.0.5</Version>
+    <Product>AudioApi</Product>
+    <PackageId>MengXinSheQu.AudioApi</PackageId>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="D:\Backup\Documents\My Pictures\PSProject\logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -35,11 +43,11 @@
     <PackageReference Include="NVorbis" Version="0.10.5" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\lib\net48\Assembly-CSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>..\lib\net48\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\Assembly-CSharp-Publicized.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
       <HintPath>..\lib\net48\Mirror.dll</HintPath>
