@@ -89,9 +89,9 @@ namespace AudioApi
         public bool ClearOnFinish = false;
 
         /// <summary>
-        /// 所有接受播放的玩家Id
+        /// 所有接受播放的玩家Hub
         /// </summary>
-        public List<int> BroadcastTo = [];
+        public List<ReferenceHub> BroadcastTo = [];
         /// <summary>
         /// 音频播放类型
         /// </summary>
@@ -339,7 +339,7 @@ namespace AudioApi
 
                 foreach (var plr in ReferenceHub.AllHubs)
                 {
-                    if (plr.connectionToClient == null || !PlayerIsConnected(plr) || BroadcastTo.Count >= 1 && !BroadcastTo.Contains(plr.PlayerId)) continue;
+                    if (plr.connectionToClient == null || !PlayerIsConnected(plr) || BroadcastTo.Count >= 1 && !BroadcastTo.Contains(plr)) continue;
 
                     plr.connectionToClient.Send(new VoiceMessage(Owner, BroadcastChannel, EncodedBuffer, dataLen, false));
                 }
